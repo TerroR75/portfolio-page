@@ -1,0 +1,16 @@
+@use 'EntrySection.scss';
+@use 'AboutSection.scss';
+@use 'ProjectsSection.scss';
+@use 'ContactSection.scss';
+.App{
+  background-color: #272727;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 0 15% 0 15%;
+}
+
+.intext-accent{
+  color: rgb(0, 255, 255);
+}
+
