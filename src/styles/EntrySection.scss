@@ -1,9 +1,9 @@
+@use './partials/colorVariables';
+
 .Entry-Section{
-    height: 1000px;
+    height: 100vh;
     border-bottom: 1px solid white;
     display: flex;
-    // justify-content: center;
-    // align-items: center;
 
     .name{
         margin:auto;
@@ -25,7 +25,7 @@
         }
 
         span:nth-child(2){
-            border-right: .08em solid rgb(0, 255, 255);
+            border-right: .08em solid colorVariables.$accent-color;
         }
 
         .links{
@@ -38,16 +38,15 @@
             }
 
             i{
-                color: rgb(0,255,255);
+                color: colorVariables.$accent-color;
                 font-size: 2rem;
                 transition: filter 500ms, font-size 100ms;
-                // text-align: center;
+                position: absolute;
             }
 
             i:hover{
-                filter: drop-shadow(0px 5px 20px rgb(0,255,255));
+                filter: drop-shadow(0px 5px 20px colorVariables.$accent-color);
                 font-size: 2.1rem;
-                
             }
         }
 
@@ -62,7 +61,7 @@
 
         @keyframes blink-caret {
             from, to { border-color: transparent }
-            50% { border-color: rgb(0, 255, 255); }
+            50% { border-color: colorVariables.$accent-color; }
         }
     }
   }
