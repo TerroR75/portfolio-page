@@ -2,7 +2,7 @@
 
 Page describing myself, my projects and technologies that I use.
 
-Live Preview: #
+Live Preview: https://kamilsulimierski.netlify.app
 
 ![No preview yet](#)
 ![No preview yet](#)
