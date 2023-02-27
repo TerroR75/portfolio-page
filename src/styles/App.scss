@@ -2,6 +2,8 @@
 @use 'AboutSection.scss';
 @use 'ProjectsSection.scss';
 @use 'ContactSection.scss';
+@use 'NavBar.scss';
+@use './partials/colorVariables';
 .App{
   background-color: #272727;
   color: white;
@@ -11,6 +13,10 @@
 }
 
 .intext-accent{
-  color: rgb(0, 255, 255);
+  color: colorVariables.$accent-color;
+}
+
+a:visited{
+    color: white;    
 }
 
