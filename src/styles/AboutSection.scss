@@ -1,4 +1,51 @@
+@use './partials/colorVariables';
 .About-Section{
     height: 1000px;
     border-bottom: 1px solid white;
+    padding: 48px 0;
+
+    .brief-info{
+      h2{
+        text-decoration: underline;
+        text-decoration-color: colorVariables.$accent-color; 
+      }
+    }
+
+    .tech-stack{
+      position: relative;
+      .gear-512:nth-child(1){
+        position: absolute;
+        width: 400px;
+        top: 0px;
+        left: 50px;
+
+        animation: rotation 60s infinite linear;
+      }
+      .gear-512:nth-child(2){
+        position: absolute;
+        width: 400px;
+        top: 280px;
+        left: 310px;
+       transform: rotate(23deg);    
+
+       animation: rotation-reverse 60s infinite linear;
+      }
+    }
+
+    @keyframes rotation {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(359deg);
+      }
+    }
+    @keyframes rotation-reverse {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(-359deg);
+      }
+    }
   }
