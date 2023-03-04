@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import githubImg from '../assets/github-original.svg';
 
 function EntrySection() {
   const [count, setCount] = useState(0);
