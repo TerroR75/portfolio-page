@@ -40,7 +40,7 @@
     <a href="https://github.com/TerroR75/portfolio-page"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/TerroR75/portfolio-page">View Demo</a>
+    <a href="https://kamilsulimierski.netlify.app">Preview Online</a>
     ·
     <a href="https://github.com/TerroR75/portfolio-page/issues">Report Bug</a>
     ·
