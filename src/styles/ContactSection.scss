@@ -1,4 +1,45 @@
+@use './partials/colorVariables';
+
 .Contact-Section{
-    height: 1000px;
+    min-height: 100vh;
     border-bottom: 1px solid white;
+    
+    .contact-form{
+      background: colorVariables.$card-color;
+      padding: 48px;
+      border-radius: 15px;
+      margin-top: 128px;
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid white;
+        width: 100%;
+
+        .contact-head{
+          display: flex;
+          justify-content: center;
+          gap: 12px;
+          input{
+            // font-size: 1.3rem;
+            // width: 50%;
+          }
+        }
+
+        .contact-body{
+          textarea{
+            resize: none;
+            margin-top: 16px;
+            font-size: 1.1rem;
+          }
+        }
+        
+      }
+    }
   }
