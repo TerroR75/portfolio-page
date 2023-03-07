@@ -44,9 +44,9 @@ $navbar-width: 13vw;
     .main-navbar{
         top: 0;
         position: fixed;
-        width: 100%;
+        width: 100vw;
         height: 5vh;
-
+        
         ul{
             flex-direction: row;
 
