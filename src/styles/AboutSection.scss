@@ -37,6 +37,11 @@
          animation: rotation-reverse 60s infinite linear;
         }
       }
+      @media screen and (max-width: 900px) {
+        .tech-stack-animatedgears{
+          display:none;
+        }
+      }
 
       .tech-stack-list{
         background: colorVariables.$card-color;
@@ -114,4 +119,8 @@
         transform: rotate(-359deg);
       }
     }
+
+
+    
+    
   }
