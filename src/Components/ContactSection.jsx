@@ -9,7 +9,10 @@ function ContactSection() {
       <div className='contact-form'>
         <h4>
           Wanna contact me? Feel free to use form below or message me directly at this address:{' '}
-          <a href='mailto:kamilsulimierski@gmail.com'>kamilsulimierski@gmail.com</a>
+          <a href='mailto:kamilsulimierski@gmail.com'>
+            kamilsulimierski@gmail.com
+            <span>(Click to open in your mail app)</span>
+          </a>
         </h4>
         <form target='_blank' action='https://formsubmit.co/kamilsulimierski@gmail.com' method='POST'>
           <div>
@@ -18,7 +21,7 @@ function ContactSection() {
               <input type='email' name='email' placeholder='Your email' required></input>
             </div>
             <div className='contact-body'>
-              <textarea placeholder='Message' class='' name='message' rows='10' cols='50' required></textarea>
+              <textarea placeholder='Message' class='' name='message' required></textarea>
             </div>
           </div>
           <button type='submit' class=''>
