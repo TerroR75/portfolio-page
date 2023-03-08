@@ -10,6 +10,9 @@ $navbar-width: 13vw;
     height: $navbar-height;
     left: 0;
     top: calc(50vh - ($navbar-height / 2));
+    color: #fff;
+    mix-blend-mode:difference;
+    font-weight: 600;
 
     ul{
         list-style: none;
