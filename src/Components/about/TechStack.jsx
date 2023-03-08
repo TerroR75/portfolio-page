@@ -41,7 +41,7 @@ function TechStack() {
         <img className='gear-512' src={gearBig} alt='Cogwheel'></img>
       </div>
 
-      <div className='tech-stack-list'>
+      <div className='tech-stack-list card'>
         <div className='list'>
           <div className='list-navbar'>
             <button data-btn='frontend' className='list-btn btn-active' onClick={btnChangeBackground}>

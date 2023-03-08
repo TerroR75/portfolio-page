@@ -6,7 +6,7 @@ function ContactSection() {
   return (
     <section id='contact-section' className='Contact-Section'>
       <h2>&lt;Contact &#8725;&gt;</h2>
-      <div className='contact-form'>
+      <div className='contact-form card'>
         <h4>
           Wanna contact me? Feel free to use form below or message me directly at this address:{' '}
           <a href='mailto:kamilsulimierski@gmail.com'>
