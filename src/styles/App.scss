@@ -4,6 +4,7 @@
 @use 'ContactSection.scss';
 @use 'NavBar.scss';
 @use './partials/colorVariables';
+@use './partials/utils.scss';
 .App{
   background-color: #272727;
   color: white;

@@ -23,6 +23,12 @@ const frontend = [
     level: 'Basic',
     iconClass: 'devicon-react-original colored',
   },
+  {
+    id: '04',
+    name: 'Sass',
+    level: 'Basic',
+    iconClass: 'devicon-sass-original colored',
+  },
 ];
 
 const backend = [
