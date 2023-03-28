@@ -4,58 +4,66 @@
 $navbar-height: 20vh;
 $navbar-width: 13vw;
 
-.main-navbar{
-    position: fixed;
-    width: $navbar-width;
-    height: $navbar-height;
-    left: 0;
-    top: calc(50vh - ($navbar-height / 2));
-    color: #fff;
-    mix-blend-mode:difference;
-    font-weight: 600;
+.main-navbar {
+  position: fixed;
+  width: $navbar-width;
+  height: $navbar-height;
+  left: 0;
+  top: calc(50vh - ($navbar-height / 2));
+  color: #fff;
+  //   mix-blend-mode: difference;
+  font-weight: 600;
+  z-index: 100;
 
-    ul{
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 100%;
-        gap: 15px;
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    gap: 15px;
 
-        a{
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-        a::before{
-            position: absolute;
-            bottom: 0;
-            width: 0%;
-            content: '';
-            transition: all 200ms ease-in-out;
-            border-bottom: 1px solid colorVariables.$accent-color;
-        }
-        a:hover::before{
-            width: 50%;
-        }
+    a {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
     }
+    a::before {
+      position: absolute;
+      bottom: 0;
+      width: 0%;
+      content: '';
+      transition: all 200ms ease-in-out;
+      border-bottom: 1px solid colorVariables.$accent-color;
+    }
+    a:hover::before {
+      width: 50%;
+    }
+  }
 }
 
 @media screen and (max-width: 700px) {
-    .main-navbar{
-        top: 0;
-        position: fixed;
-        width: 100vw;
-        height: 5vh;
-        
-        ul{
-            flex-direction: row;
+  .main-navbar {
+    top: 0;
+    position: fixed;
+    width: 100vw;
+    height: 5vh;
 
-            a{
-                width: 100%;
-            }
-        }
+    // Glass effect
+    background: rgba(39, 39, 39, 0.44);
+    border-bottom: 1px solid #2c2c2c;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(11.5px);
+    -webkit-backdrop-filter: blur(11.5px);
+
+    ul {
+      flex-direction: row;
+
+      a {
+        width: 100%;
+      }
     }
+  }
 }

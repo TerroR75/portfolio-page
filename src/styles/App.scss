@@ -5,24 +5,24 @@
 @use 'NavBar.scss';
 @use './partials/colorVariables';
 @use './partials/utils.scss';
-.App{
+@use './AnimatedGears.scss';
+.App {
   background-color: #272727;
   color: white;
   display: flex;
   flex-direction: column;
   padding: 0 15% 0 15%;
-
   line-height: 1.7;
+  overflow: hidden;
 }
 
-.intext-accent{
+.intext-accent {
   color: colorVariables.$accent-color;
 }
 
-a:visited{
-  color: white;    
+a:visited {
+  color: white;
 }
-a:link{
-  color:white;
+a:link {
+  color: white;
 }
-

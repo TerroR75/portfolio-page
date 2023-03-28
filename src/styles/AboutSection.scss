@@ -1,124 +1,84 @@
 @use './partials/colorVariables';
-.About-Section{
-    min-height: 100vh;
-    border-bottom: 1px solid white;
-    padding: 48px 0;
 
-    .brief-info{
-      h2{
-        text-decoration: underline;
-        text-decoration-color: colorVariables.$accent-color; 
-      }
-    }
+.About-Section {
+  min-height: 100vh;
+  border-bottom: 1px solid white;
+  padding: 48px 0;
 
-    .tech-stack{
+  .tech-stack {
+    display: flex;
+    flex-direction: column;
+
+    .tech-stack-list {
+      max-height: 1000px;
       display: flex;
-      flex-direction: column;
+      padding: 24px 24px;
+      margin-top: 30%;
 
-      .tech-stack-animatedgears{
-        height: 100vh;
-        margin-top: 50px;
-        position: relative;
-        .gear-512:nth-child(1){
-          position: absolute;
-          width: 400px;
-          top: 0px;
-          left: calc((40% - 256px) + 50px);
-  
-          animation: rotation 60s infinite linear;
-        }
-        .gear-512:nth-child(2){
-          position: absolute;
-          width: 400px;
-          top: 310px;
-          left: calc((40% - 256px) + 260px);
-         transform: rotate(23deg);    
-  
-         animation: rotation-reverse 60s infinite linear;
-        }
-      }
-      @media screen and (max-width: 900px) {
-        .tech-stack-animatedgears{
-          display:none;
-        }
-      }
+      .list {
+        width: 100%;
+        height: 100%;
+        .list-navbar {
+          height: 48px;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          border-bottom: 1px solid white;
 
-      .tech-stack-list{
-        max-height: 1000px;
-        display: flex;
-        padding: 24px 24px;
-        
-        
-
-        .list{
-          width: 100%;
-          height: 100%;
-          .list-navbar{
-            height: 48px;
-            display:flex;
-            align-items: center;
-            justify-content: space-around;
-            border-bottom: 1px solid white;
-
-            button{
-              color: white;
-              background: inherit;
-              border: none;
-              width: 100%;
-              height: 100%;
-              box-sizing: border-box;
-              border: 3px solid rgba(255, 255, 255, 0);
-            }
-            button:hover{
-              // border-top: 3px solid colorVariables.$accent-color;
-              cursor: pointer;
-            }
-            button.btn-active{
-              border-top: 3px solid colorVariables.$accent-color;
-            }
+          button {
+            color: white;
+            background: inherit;
+            border: none;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            border: 3px solid rgba(255, 255, 255, 0);
           }
+          button:hover {
+            // border-top: 3px solid colorVariables.$accent-color;
+            cursor: pointer;
+          }
+          button.btn-active {
+            border-top: 3px solid colorVariables.$accent-color;
+          }
+        }
 
-          ul{
-            margin-top: 48px;
-            max-height: 800px;
-            list-style: none;
+        ul {
+          margin-top: 48px;
+          max-height: 800px;
+          list-style: none;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          gap: 24px;
+          li {
             display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            gap: 24px;
-            li{
-              display: flex;
-              align-items: center;
-              gap: 8px;
-              margin-bottom: 12px;
-              i{
-                font-size: 48px;
-              }
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+            i {
+              font-size: 48px;
             }
           }
         }
       }
-      
     }
-
-    @keyframes rotation {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(359deg);
-      }
-    }
-    @keyframes rotation-reverse {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(-359deg);
-      }
-    }
-
-
-    
-    
   }
+
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+  @keyframes rotation-reverse {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-359deg);
+    }
+  }
+}

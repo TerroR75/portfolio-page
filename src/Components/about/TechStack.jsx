@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import gearBig from '../../assets/cogwheel-svgrepo-com.svg';
 import { frontend, backend, experience, learning, futurePlans } from '../../data/techstacklist';
 
 function TechStack() {
@@ -36,11 +35,6 @@ function TechStack() {
 
   return (
     <div className='tech-stack'>
-      <div className='tech-stack-animatedgears'>
-        <img className='gear-512' src={gearBig} alt='Cogwheel'></img>
-        <img className='gear-512' src={gearBig} alt='Cogwheel'></img>
-      </div>
-
       <div className='tech-stack-list card'>
         <div className='list'>
           <div className='list-navbar'>

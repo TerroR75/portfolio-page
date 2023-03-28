@@ -1,0 +1,63 @@
+.tech-stack-animatedgears {
+  position: absolute;
+  bottom: -80px;
+  transform: scale(0.4);
+  .gear-image {
+    border: 1px solid red;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+  }
+
+  .gear-container:nth-child(1) {
+    position: relative;
+
+    .gear-image {
+      background: url('../assets/ferenc-almasi-frontend-unsplash.jpg');
+      background-size: cover;
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      top: 50px;
+      left: calc((40% - 206px) + 50px);
+      border-radius: 50%;
+    }
+    .gear-512 {
+      position: absolute;
+      width: 400px;
+      top: 0px;
+      left: calc((40% - 256px) + 50px);
+
+      animation: rotation 60s infinite linear;
+    }
+  }
+
+  .gear-container:nth-child(2) {
+    position: relative;
+
+    .gear-image {
+      background: url('../assets/gabriel-heinzer-backend-unsplash.jpg');
+      background-size: cover;
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      top: 360px;
+      left: calc((40% - 206px) + 260px);
+      border-radius: 50%;
+    }
+    .gear-512 {
+      position: absolute;
+      width: 400px;
+      top: 310px;
+      left: calc((40% - 256px) + 260px);
+      transform: rotate(23deg);
+
+      animation: rotation-reverse 60s infinite linear;
+    }
+  }
+}
+@media screen and (max-width: 831px) {
+  .tech-stack-animatedgears {
+    bottom: -50px;
+  }
+}

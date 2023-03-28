@@ -4,3 +4,23 @@
     background: colorVariables.$card-color;
     border-radius: 10px;
 }
+
+.card-opac-08{
+    background: colorVariables.$card-color-08;
+}
+
+.section-label{
+    text-decoration: underline;
+    text-decoration-color: colorVariables.$accent-color; 
+}
+
+.input{
+    border: 1px solid white;
+    background: inherit;
+    color: white;
+}
+
+.input:focus{
+    outline: none;
+    border: 1px solid colorVariables.$accent-color;    
+}
