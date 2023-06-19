@@ -1,64 +1,118 @@
-import React, { useState } from 'react';
-import { frontend, backend, experience, learning, futurePlans } from '../../data/techstacklist';
+import React, { useState, useEffect } from "react";
+import {
+  frontend,
+  backend,
+  experience,
+  learning,
+  futurePlans,
+} from "../../data/techstacklist";
+import { getAllTechs } from "../../api";
 
 function TechStack() {
-  const [activeList, changeActiveList] = useState(frontend);
+  const [activeList, setActiveList] = useState([]);
+  const [data, setData] = useState([]);
 
-  function changeList() {
-    changeActiveList(backend);
-  }
   function btnChangeBackground(target) {
-    const otherBtns = document.querySelectorAll('.list-btn');
+    const otherBtns = document.querySelectorAll(".list-btn");
     otherBtns.forEach((item) => {
-      item.classList.remove('btn-active');
+      item.classList.remove("btn-active");
     });
-    target.target.classList.toggle('btn-active');
-
+    target.target.classList.toggle("btn-active");
     switch (target.target.dataset.btn) {
-      case 'frontend':
-        changeActiveList(frontend);
+      case "frontend":
+        setActiveList(data.filter((tech) => tech.categories === "front"));
         break;
-      case 'backend':
-        changeActiveList(backend);
+      case "backend":
+        setActiveList(data.filter((tech) => tech.categories === "back"));
         break;
-      case 'experience':
-        changeActiveList(experience);
+      case "fullstack":
+        setActiveList(data.filter((tech) => tech.categories === "fullstack"));
         break;
-      case 'learning':
-        changeActiveList(learning);
+      case "utils":
+        setActiveList(data.filter((tech) => tech.categories === "utilities"));
         break;
-      case 'future-plans':
-        changeActiveList(futurePlans);
+      default:
         break;
     }
   }
 
+  const fetchData = async () => {
+    const storedData = localStorage.getItem("techList");
+    if (!storedData) {
+      const data = await getAllTechs();
+      localStorage.setItem("techList", JSON.stringify(data));
+      setData(data.techArray);
+    } else {
+      const parsedData = storedData ? JSON.parse(storedData) : null;
+
+      const lastFetchDate = parsedData?.fetchDate
+        ? new Date(parsedData.fetchDate)
+        : null;
+      const currentTime = new Date();
+      const cooldown = 1 * 60 * 60 * 1000; // 1 hour cooldown
+      const shouldFetchData =
+        !lastFetchDate || currentTime - lastFetchDate >= cooldown;
+
+      if (shouldFetchData) {
+        const data = await getAllTechs();
+        localStorage.setItem("techList", JSON.stringify(data));
+        setData(data.techArray);
+      } else {
+        const data = JSON.parse(localStorage.getItem("techList"));
+        setData(data.techArray);
+      }
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+  useEffect(() => {
+    setActiveList(data.filter((tech) => tech.categories === "fullstack"));
+  }, [data]);
+
   return (
-    <div className='tech-stack'>
-      <div className='tech-stack-list card'>
-        <div className='list'>
-          <div className='list-navbar'>
-            <button data-btn='frontend' className='list-btn btn-active' onClick={btnChangeBackground}>
+    <div className="tech-stack">
+      <div className="tech-stack-list card">
+        <div className="list">
+          <div className="list-navbar">
+            <button
+              data-btn="fullstack"
+              className="list-btn btn-active"
+              onClick={btnChangeBackground}
+            >
+              Fullstack
+            </button>
+            <button
+              data-btn="frontend"
+              className="list-btn"
+              onClick={btnChangeBackground}
+            >
               Frontend
             </button>
-            <button data-btn='backend' className='list-btn' onClick={btnChangeBackground}>
+            <button
+              data-btn="backend"
+              className="list-btn"
+              onClick={btnChangeBackground}
+            >
               Backend
             </button>
-            <button data-btn='experience' className='list-btn' onClick={btnChangeBackground}>
-              Experience with
-            </button>
-            <button data-btn='learning' className='list-btn' onClick={btnChangeBackground}>
-              Learning
-            </button>
-            <button data-btn='future-plans' className='list-btn' onClick={btnChangeBackground}>
-              Future Plans
+            <button
+              data-btn="utils"
+              className="list-btn"
+              onClick={btnChangeBackground}
+            >
+              Utilities
             </button>
           </div>
           <ul>
             {activeList.map((tech) => {
               return (
                 <li key={tech.id}>
-                  <i className={tech.iconClass}></i>
+                  <img
+                    src={tech.image ? tech.image.url : "no img"}
+                    className="tech-image"
+                  ></img>
                   {tech.name}
                 </li>
               );
@@ -67,7 +121,7 @@ function TechStack() {
         </div>
       </div>
 
-      <div className='tech-stack-learning'></div>
+      <div className="tech-stack-learning"></div>
     </div>
   );
 }
