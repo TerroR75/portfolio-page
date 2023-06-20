@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "dotenv": "^16.3.1",
+    "embla-carousel-autoplay": "^8.0.0-rc07",
+    "embla-carousel-react": "^8.0.0-rc07",
     "graphql": "^16.6.0",
     "graphql-request": "^6.1.0",
     "react": "^18.2.0",

@@ -7,6 +7,7 @@ import {
   futurePlans,
 } from "../../data/techstacklist";
 import { getAllTechs } from "../../api";
+import { fetchData } from "../../utils/dataFetching";
 
 function TechStack() {
   const [activeList, setActiveList] = useState([]);
@@ -36,36 +37,8 @@ function TechStack() {
     }
   }
 
-  const fetchData = async () => {
-    const storedData = localStorage.getItem("techList");
-    if (!storedData) {
-      const data = await getAllTechs();
-      localStorage.setItem("techList", JSON.stringify(data));
-      setData(data.techArray);
-    } else {
-      const parsedData = storedData ? JSON.parse(storedData) : null;
-
-      const lastFetchDate = parsedData?.fetchDate
-        ? new Date(parsedData.fetchDate)
-        : null;
-      const currentTime = new Date();
-      const cooldown = 1 * 60 * 60 * 1000; // 1 hour cooldown
-      const shouldFetchData =
-        !lastFetchDate || currentTime - lastFetchDate >= cooldown;
-
-      if (shouldFetchData) {
-        const data = await getAllTechs();
-        localStorage.setItem("techList", JSON.stringify(data));
-        setData(data.techArray);
-      } else {
-        const data = JSON.parse(localStorage.getItem("techList"));
-        setData(data.techArray);
-      }
-    }
-  };
-
   useEffect(() => {
-    fetchData();
+    fetchData("techArray", setData, getAllTechs);
   }, []);
   useEffect(() => {
     setActiveList(data.filter((tech) => tech.categories === "fullstack"));

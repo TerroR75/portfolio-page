@@ -38,6 +38,10 @@ export const getAllProjects = async () => {
         id
         title
         description
+        projectImage {
+          id
+          url
+        }
         techStacks {
           id
           short

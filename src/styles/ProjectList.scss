@@ -1,4 +1,4 @@
-@use './partials/colorVariables';
+@use "./partials/colorVariables";
 
 .projects-container {
   min-height: 100vh;
@@ -7,6 +7,17 @@
   flex-direction: column;
   gap: 48px;
   // position: relative;
+
+  .embla {
+    overflow: hidden;
+  }
+  .embla__container {
+    display: flex;
+  }
+  .embla__slide {
+    flex: 0 0 100%;
+    min-width: 0;
+  }
 
   .project-wrapper {
     width: 100%;
@@ -17,6 +28,11 @@
     align-items: center;
 
     margin: 24px 0;
+
+    .project-tech-stack-img {
+      margin-top: 12px;
+      height: 36px;
+    }
 
     .img-wrapper {
       position: absolute;
