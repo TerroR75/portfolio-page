@@ -142,9 +142,9 @@ Project serves purpose for me to showcase my work.
 
 ## Roadmap
 
-- [ ] Project list
-- [ ] Contact section
-- [ ] Better visuals
+- [x] Project list
+- [x] Contact section
+- [x] Better visuals
 
 See the [open issues](https://github.com/TerroR75/portfolio-page/issues) for a full list of proposed features (and known issues).
 
