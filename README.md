@@ -29,9 +29,6 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/TerroR75/portfolio-page">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
 
 <h3 align="center">Kamil S. - Portfolio</h3>
 
@@ -76,7 +73,8 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+![image](https://github.com/TerroR75/portfolio-page/assets/83674512/3d052a25-74cf-4759-bb44-d09d5b082d73)
+
 
 Made this website for myself to showcase my projects and my learning path.
 
