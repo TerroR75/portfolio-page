@@ -38,8 +38,9 @@ export const getAllProjects = async () => {
         id
         title
         description
+        linkToCode
+        linkToPreview
         projectImage {
-          id
           url
         }
         techStacks {
