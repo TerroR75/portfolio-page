@@ -60,6 +60,17 @@
         transform: scaleX(1.1);
         transform-origin: left center;
       }
+
+      .project-link.no-preview {
+        background: gray;
+        transition: none;
+        cursor: default;
+        pointer-events: none;
+      }
+      .project-link.no-preview:hover {
+        transform: scaleX(1);
+        transform-origin: left center;
+      }
     }
 
     .project-tech-stack-img {

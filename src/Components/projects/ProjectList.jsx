@@ -56,7 +56,11 @@ function ProjectList() {
                 <a
                   href={project.linkToPreview}
                   target="_blank"
-                  className="project-link project-livepreview"
+                  className={`${
+                    project.linkToPreview.length > 0
+                      ? "project-link"
+                      : "project-link no-preview"
+                  } project-livepreview`}
                 >
                   <PublicIcon
                     sx={{
