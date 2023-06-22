@@ -57,7 +57,7 @@ function ProjectList() {
                   href={project.linkToPreview}
                   target="_blank"
                   className={`${
-                    project.linkToPreview.length > 0
+                    project.linkToPreview
                       ? "project-link"
                       : "project-link no-preview"
                   } project-livepreview`}
