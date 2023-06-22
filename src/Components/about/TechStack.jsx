@@ -8,6 +8,7 @@ import {
 } from "../../data/techstacklist";
 import { getAllTechs } from "../../api";
 import { fetchData } from "../../utils/dataFetching";
+import Tooltip from "../Features/Tooltip";
 
 function TechStack() {
   const [activeList, setActiveList] = useState([]);
@@ -86,7 +87,10 @@ function TechStack() {
                     src={tech.image ? tech.image.url : "no img"}
                     className="tech-image"
                   ></img>
-                  {tech.name}
+                  <div>
+                    <div>{tech.name}</div>
+                    <span className="tech-level">{tech.level}</span>
+                  </div>
                 </li>
               );
             })}

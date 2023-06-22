@@ -13,6 +13,7 @@ export const getAllTechs = async () => {
         name
         short
         categories
+        level
         image {
           url
         }

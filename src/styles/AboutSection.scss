@@ -56,8 +56,20 @@
             align-items: center;
             gap: 8px;
             margin-bottom: 12px;
+            cursor: pointer;
+            position: relative;
             img {
               height: 48px;
+            }
+
+            div {
+              position: relative;
+              .tech-level {
+                position: absolute;
+                width: 100%;
+                font-size: 0.7rem;
+                color: rgb(196, 196, 196);
+              }
             }
           }
         }
