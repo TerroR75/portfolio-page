@@ -8,7 +8,6 @@ import {
 } from "../../data/techstacklist";
 import { getAllTechs } from "../../api";
 import { fetchData } from "../../utils/dataFetching";
-import Tooltip from "../Features/Tooltip";
 
 function TechStack() {
   const [activeList, setActiveList] = useState([]);
