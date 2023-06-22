@@ -1,11 +1,4 @@
 import React, { useState, useEffect } from "react";
-import {
-  frontend,
-  backend,
-  experience,
-  learning,
-  futurePlans,
-} from "../../data/techstacklist";
 import { getAllTechs } from "../../api";
 import { fetchData } from "../../utils/dataFetching";
 
